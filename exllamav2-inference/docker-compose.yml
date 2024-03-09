@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  exllamav2_inference:
+    container_name: exllamav2_inference
+    volumes:
+      - '${MODEL_DIR}:/models'
+    image: 'bartowski/exllamav2_inference:latest'
+    ulimits:
+      memlock: -1
+    mem_limit: 50gb
+    stdin_open: true
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['1']
+              capabilities: [ gpu ]
+    command:
+      [
+        "python3",
+        "examples/chat.py",
+        "-m",
+        "/models/${MODEL}",
+        "-mode",
+        "llama"
+      ]

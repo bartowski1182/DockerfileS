@@ -1,0 +1,21 @@
+base_model: abacusai/bigstral-12b-32k
+gate_mode: random 
+dtype: bfloat16
+experts_per_token: 2
+experts:
+  - source_model: abacusai/bigstral-12b-32k
+    positive_prompts: []
+  - source_model: abacusai/bigstral-12b-32k
+    positive_prompts: []
+  - source_model: abacusai/bigstral-12b-32k
+    positive_prompts: []
+  - source_model: abacusai/bigstral-12b-32k
+    positive_prompts: []
+  - source_model: abacusai/bigstral-12b-32k
+    positive_prompts: []
+  - source_model: abacusai/bigstral-12b-32k
+    positive_prompts: []
+  - source_model: abacusai/bigstral-12b-32k
+    positive_prompts: []
+  - source_model: abacusai/bigstral-12b-32k
+    positive_prompts: []
