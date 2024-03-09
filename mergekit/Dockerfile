@@ -24,5 +24,3 @@ RUN git clone https://github.com/arcee-ai/mergekit.git --branch $branch \
     && pip3 install -e .
 
 WORKDIR /mergekit
-
-COPY mergekit_moe_config.yml /mergekit/mergekit_moe_config.yml

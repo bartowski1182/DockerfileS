@@ -1,9 +1,10 @@
 version: '3.8'
 services:
-  llama_cpp:
+  mergekit:
     image: bartowski/mergekit:latest
     volumes:
       - '${MODEL_DIR}:/models'
+      - '${MERGKIT_CONFIG_DIR}:/mount'
     environment:
       - PUID=1000
       - PGID=1000
@@ -13,4 +14,4 @@ services:
     shm_size: '4gb'
     stdin_open: true
     tty: true
-    command: [ "mergekit-moe", "--trust-remote-code", "--random-seed", "0", "/mergekit/mergekit_moe_config.yml", "/models" ]
+    command: [ "mergekit-moe",  "--trust-remote-code", "--random-seed", "0", "/mount/mergekit_moe_config.yml", "/models" ]
